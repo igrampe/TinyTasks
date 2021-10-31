@@ -24,8 +24,6 @@
 		539FABF7272DCC1400025192 /* TinyTasksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539FABF6272DCC1400025192 /* TinyTasksTests.swift */; };
 		539FAC01272DCC1400025192 /* TinyTasksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539FAC00272DCC1400025192 /* TinyTasksUITests.swift */; };
 		539FAC03272DCC1400025192 /* TinyTasksUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539FAC02272DCC1400025192 /* TinyTasksUITestsLaunchTests.swift */; };
-		539FAC11272DCC3200025192 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539FAC10272DCC3200025192 /* Task.swift */; };
-		539FAC13272DCC6F00025192 /* TaskList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 539FAC12272DCC6F00025192 /* TaskList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,8 +65,6 @@
 		539FABFC272DCC1400025192 /* TinyTasksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TinyTasksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		539FAC00272DCC1400025192 /* TinyTasksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyTasksUITests.swift; sourceTree = "<group>"; };
 		539FAC02272DCC1400025192 /* TinyTasksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinyTasksUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		539FAC10272DCC3200025192 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		539FAC12272DCC6F00025192 /* TaskList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,7 +148,6 @@
 				535729B0272EC961001D256A /* Controller */,
 				535729A3272DEB32001D256A /* View */,
 				5357299E272DCEA1001D256A /* Service */,
-				539FAC0F272DCC2A00025192 /* Model */,
 				539FABDC272DCC1300025192 /* AppDelegate.swift */,
 				539FABDE272DCC1300025192 /* SceneDelegate.swift */,
 				539FABE8272DCC1400025192 /* Assets.xcassets */,
@@ -178,15 +173,6 @@
 				539FAC02272DCC1400025192 /* TinyTasksUITestsLaunchTests.swift */,
 			);
 			path = TinyTasksUITests;
-			sourceTree = "<group>";
-		};
-		539FAC0F272DCC2A00025192 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				539FAC10272DCC3200025192 /* Task.swift */,
-				539FAC12272DCC6F00025192 /* TaskList.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,12 +305,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				539FAC13272DCC6F00025192 /* TaskList.swift in Sources */,
 				535729A5272DEB43001D256A /* TaskListCell.swift in Sources */,
 				535729A0272DCEAB001D256A /* DatabaseService.swift in Sources */,
 				539FABE7272DCC1300025192 /* TinyTasks.xcdatamodeld in Sources */,
 				535729B6272EC961001D256A /* NewTaskViewController.swift in Sources */,
-				539FAC11272DCC3200025192 /* Task.swift in Sources */,
 				535729B8272EC961001D256A /* TaskListViewController.swift.swift in Sources */,
 				535729AF272EBB36001D256A /* UITableViewCell+Configuration.swift in Sources */,
 				535729BC272EF9D2001D256A /* TaskCell.swift in Sources */,

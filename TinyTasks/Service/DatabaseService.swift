@@ -10,7 +10,7 @@ import CoreData
 
 class DatabaseService {    
     // MARK: - Core Data stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "TinyTasks")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
@@ -28,10 +28,6 @@ class DatabaseService {
     
     var mainContext: NSManagedObjectContext {
         return persistentContainer.viewContext
-    }
-    
-    var backgroundContext: NSManagedObjectContext {
-        return persistentContainer.newBackgroundContext()
     }
     
     private func saveContext(_ context: NSManagedObjectContext, needReset: Bool = false) {
