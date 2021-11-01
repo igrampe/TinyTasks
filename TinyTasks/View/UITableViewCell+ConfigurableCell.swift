@@ -1,5 +1,5 @@
 //
-//  UITableViewCell+Configuration.swift
+//  UITableViewCell+ConfigurableCell.swift
 //  TinyTasks
 //
 //  Created by Semyon Belokovsky on 31.10.2021.

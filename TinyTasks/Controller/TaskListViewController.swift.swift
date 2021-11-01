@@ -61,11 +61,10 @@ class TaskListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let object = tableController.object(at: indexPath.row) else {
+        guard let objectID = tableController.objectID(at: indexPath.row) else {
             return
         }
-        object.completed = !object.completed
-        databaseService?.saveMainContext()
+        databaseService?.toggleTaskCompletion(with: objectID)
     }
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

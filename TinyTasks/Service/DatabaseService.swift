@@ -45,10 +45,6 @@ class DatabaseService {
     }
 
     // MARK: - Public
-
-    func saveMainContext() {
-        saveContext(mainContext)
-    }
     
     func addTaskList(with title: String?) {
         persistentContainer.performBackgroundTask { [weak self] taskContext in
@@ -77,6 +73,7 @@ class DatabaseService {
             taskContext.automaticallyMergesChangesFromParent = true
             
             guard let taskList = try? taskContext.existingObject(with: taskListObjectID) as? TaskList else {
+                taskContext.reset()
                 return
             }
             
@@ -97,11 +94,28 @@ class DatabaseService {
         }
     }
     
+    func toggleTaskCompletion(with objectID: NSManagedObjectID) {
+        persistentContainer.performBackgroundTask { [weak self] taskContext in
+            taskContext.automaticallyMergesChangesFromParent = true
+            
+            guard let object = try? taskContext.existingObject(with: objectID) as? Task else {
+                taskContext.reset()
+                return
+            }
+            object.completed = !object.completed
+            
+            self?.saveContext(taskContext, needReset: true)
+        }
+    }
+    
     func deleteObject(with objectID: NSManagedObjectID) {
         persistentContainer.performBackgroundTask { [weak self] taskContext in
             taskContext.automaticallyMergesChangesFromParent = true
             
-            let object = taskContext.object(with: objectID)
+            guard let object = try? taskContext.existingObject(with: objectID) else {
+                taskContext.reset()
+                return
+            }
             taskContext.delete(object)
             
             self?.saveContext(taskContext, needReset: true)

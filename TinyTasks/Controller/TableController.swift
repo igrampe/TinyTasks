@@ -84,16 +84,4 @@ class TableController <Model: NSManagedObject, Cell: ConfigurableCell> : NSObjec
         }
         return snapshot.itemIdentifiers[index]
     }
-    
-    func object(at index: Int) -> Model? {
-        guard let objectID = objectID(at: index) else {
-            return nil
-        }
-        do {
-            return try context?.existingObject(with: objectID) as? Model
-        } catch {
-            print(error)
-        }
-        return nil
-    }
 }
